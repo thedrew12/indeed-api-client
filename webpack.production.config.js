@@ -5,7 +5,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: [
-		'./prod.js' // Your appʼs entry point
+		'./index.js' // Your appʼs entry point
 	],
 	output: {
 		path: path.join(__dirname, 'public'),
