@@ -1,1 +1,1 @@
-export default from './src/Indeed';
+export { default as Indeed } from './src/Indeed';
