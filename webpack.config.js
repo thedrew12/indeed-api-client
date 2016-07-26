@@ -9,7 +9,6 @@ module.exports = {
 		'webpack/hot/only-dev-server',
 		'./index.js' // Your appʼs entry point
 	],
-	context: path.join(__dirname, './src'),
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
 		path: path.join(__dirname, 'public'),
