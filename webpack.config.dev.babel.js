@@ -7,7 +7,7 @@ export default {
 	noInfo: false,
 	entry: [
 		'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
-		'./src/index' // Your appʼs entry point
+		'./src/index.js' // Your appʼs entry point
 	],
 	target: 'web', // bundle the code in a way the browser understands
 	output: {
