@@ -29,12 +29,9 @@ export default {
     loaders: [
 			{
 				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
+				exclude: /node_modules/,
 				include: path.join(__dirname, './src'),
-				loader: 'babel',
-				query: {
-					presets: ['es2015']
-				}
+				loader: 'babel-loader'
 			}
 		]
   }

@@ -6,7 +6,7 @@ export default {
 	entry: [
 		'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
 		'webpack/hot/only-dev-server',
-		'./index.js' // Your appʼs entry point
+		'./src/Indeed.js' // Your appʼs entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
@@ -17,12 +17,9 @@ export default {
     loaders: [
 			{
 				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
+				exclude: /(node_modules/,
 				include: path.join(__dirname, './src'),
-				loader: 'babel',
-				query: {
-					presets: ['es2015']
-				}
+				loader: 'babel-loader'
 			}
 		]
   },
