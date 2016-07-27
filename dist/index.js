@@ -57,16 +57,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
+	exports.default = Indeed;
 	
-	var _indeed = __webpack_require__(3);
+	var _JobSearch = __webpack_require__(1);
 	
-	var _indeed2 = _interopRequireDefault(_indeed);
-
+	var _JobSearch2 = _interopRequireDefault(_JobSearch);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _indeed2.default;
+	
+	function Indeed() {
+		var url = arguments.length <= 0 || arguments[0] === undefined ? 'http://api.indeed.com/ads' : arguments[0];
+		var publisherId = arguments[1];
+	
+		if (!publisherId) {
+			throw Error('An Indeed publisher id is required');
+		} else {
+			return {
+				jobSearch: function jobSearch() {
+					return (0, _JobSearch2.default)(url, publisherId);
+				}
+			};
+		}
+	}
 
 /***/ },
 /* 1 */
@@ -81,11 +95,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _http = __webpack_require__(2);
 	
-	var _queryStrings = __webpack_require__(4);
+	var _queryStrings = __webpack_require__(3);
 	
 	var _queryStrings2 = _interopRequireDefault(_queryStrings);
 	
-	var _queryString = __webpack_require__(7);
+	var _queryString = __webpack_require__(6);
 	
 	var _queryString2 = _interopRequireDefault(_queryString);
 	
@@ -208,7 +222,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.fetchHandler = fetchHandler;
 	exports.getData = getData;
 	
-	var _isomorphicFetch = __webpack_require__(5);
+	var _isomorphicFetch = __webpack_require__(4);
 	
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 	
@@ -243,38 +257,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = Indeed;
-	
-	var _JobSearch = __webpack_require__(1);
-	
-	var _JobSearch2 = _interopRequireDefault(_JobSearch);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function Indeed() {
-		var url = arguments.length <= 0 || arguments[0] === undefined ? 'http://api.indeed.com/ads' : arguments[0];
-		var publisherId = arguments[1];
-	
-		if (!publisherId) {
-			throw Error('An Indeed publisher id is required');
-		} else {
-			return {
-				jobSearch: function jobSearch() {
-					return (0, _JobSearch2.default)(url, publisherId);
-				}
-			};
-		}
-	}
-
-/***/ },
-/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -321,19 +303,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// the whatwg-fetch polyfill installs the fetch() function
 	// on the global object (window or self)
 	//
 	// Return that as the export for use in Webpack, Browserify etc.
-	__webpack_require__(9);
+	__webpack_require__(8);
 	module.exports = self.fetch.bind(self);
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -422,12 +404,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var strictUriEncode = __webpack_require__(8);
-	var objectAssign = __webpack_require__(6);
+	var strictUriEncode = __webpack_require__(7);
+	var objectAssign = __webpack_require__(5);
 	
 	function encode(value, opts) {
 		if (opts.encode) {
@@ -526,7 +508,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -538,7 +520,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 	(function(self) {
