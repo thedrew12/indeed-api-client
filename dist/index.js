@@ -1,3 +1,4 @@
+var IndeedApiClient =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -53,10 +54,9 @@
 	var _indeed = __webpack_require__(3);
 	
 	var _indeed2 = _interopRequireDefault(_indeed);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	console.log(_indeed2.default);
+
 	exports.default = _indeed2.default;
 
 /***/ },

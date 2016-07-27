@@ -14,7 +14,9 @@ export default {
 	output: {
 		path: `${__dirname}/dist`,
 		publicPath: '/',
-		filename: 'index.js'
+		filename: 'index.js',
+    library: 'IndeedApiClient',
+		libraryTarget: 'var'
 	},
   resolve: {
     extensions: ['', '.js']
