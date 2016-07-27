@@ -2,12 +2,11 @@
   "name": "indeed-api-client",
   "version": "1.0.0",
   "description": "A client library for connecting to the Indeed API",
-  "main": "./dist/bundle.js",
+  "main": "./dist/index.js",
   "babel": {
     "presets": ["es2015"]
   },
   "scripts": {
-    "build": "babel-node tools/build.js",
     "start": "webpack-dev-server --progress --profile --colors --hot",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",

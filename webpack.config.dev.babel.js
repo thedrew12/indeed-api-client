@@ -9,10 +9,9 @@ export default {
 		'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
 		'./src/index.js' // Your appʼs entry point
 	],
-	target: 'web', // bundle the code in a way the browser understands
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.js'
+		filename: 'index.js'
 	},
 	devServer: {
 		contentBase: './src'

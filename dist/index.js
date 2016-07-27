@@ -50,48 +50,17 @@
 	  value: true
 	});
 	
-	var _Indeed = __webpack_require__(1);
+	var _indeed = __webpack_require__(3);
 	
-	var _Indeed2 = _interopRequireDefault(_Indeed);
-
+	var _indeed2 = _interopRequireDefault(_indeed);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Indeed2.default;
+	
+	console.log(_indeed2.default);
+	exports.default = _indeed2.default;
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = Indeed;
-	
-	var _JobSearch = __webpack_require__(2);
-	
-	var _JobSearch2 = _interopRequireDefault(_JobSearch);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function Indeed() {
-		var url = arguments.length <= 0 || arguments[0] === undefined ? 'http://api.indeed.com/ads' : arguments[0];
-		var publisherId = arguments[1];
-	
-		if (!publisherId) {
-			throw Error('An Indeed publisher id is required');
-		} else {
-			return {
-				jobSearch: function jobSearch() {
-					return (0, _JobSearch2.default)(url, publisherId);
-				}
-			};
-		}
-	}
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -101,7 +70,7 @@
 	});
 	exports.default = jobSearch;
 	
-	var _http = __webpack_require__(3);
+	var _http = __webpack_require__(2);
 	
 	var _queryStrings = __webpack_require__(4);
 	
@@ -219,7 +188,7 @@
 	}
 
 /***/ },
-/* 3 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -261,6 +230,38 @@
 	  return (0, _isomorphicFetch2.default)(url).then(function (response) {
 	    return fetchHandler(response);
 	  });
+	}
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = Indeed;
+	
+	var _JobSearch = __webpack_require__(1);
+	
+	var _JobSearch2 = _interopRequireDefault(_JobSearch);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Indeed() {
+		var url = arguments.length <= 0 || arguments[0] === undefined ? 'http://api.indeed.com/ads' : arguments[0];
+		var publisherId = arguments[1];
+	
+		if (!publisherId) {
+			throw Error('An Indeed publisher id is required');
+		} else {
+			return {
+				jobSearch: function jobSearch() {
+					return (0, _JobSearch2.default)(url, publisherId);
+				}
+			};
+		}
 	}
 
 /***/ },
@@ -968,4 +969,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=index.js.map

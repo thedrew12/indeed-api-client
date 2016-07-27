@@ -1,2 +1,2 @@
-import Indeed from './Indeed';
-export default Indeed;
+import indeed from './indeed';
+export default indeed;

@@ -14,7 +14,7 @@ export default {
 	output: {
 		path: `${__dirname}/dist`,
 		publicPath: '/',
-		filename: 'bundle.js'
+		filename: 'index.js'
 	},
   resolve: {
     extensions: ['', '.js']
