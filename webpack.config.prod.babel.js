@@ -16,7 +16,7 @@ export default {
 		publicPath: '/',
 		filename: 'index.js',
     library: 'IndeedApiClient',
-		libraryTarget: 'var'
+		libraryTarget: 'umd'
 	},
   resolve: {
     extensions: ['', '.js']
