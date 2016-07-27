@@ -2,7 +2,7 @@
   "name": "indeed-api-client",
   "version": "1.0.0",
   "description": "A client library for connecting to the Indeed API",
-  "main": "./src/index.js",
+  "main": "./dist/bundle.js",
   "babel": {
     "presets": ["es2015"]
   },
