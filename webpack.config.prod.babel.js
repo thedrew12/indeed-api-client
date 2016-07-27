@@ -14,8 +14,11 @@ export default {
 	output: {
 		path: `${__dirname}/dist`,
 		publicPath: '/',
-		filename: 'index.js'
+		filename: 'bundle.js'
 	},
+  resolve: {
+    extensions: ['', '.js']
+  },
 	devServer: {
 		contentBase: './dist'
 	},
