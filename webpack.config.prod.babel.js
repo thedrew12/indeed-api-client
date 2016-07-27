@@ -9,7 +9,7 @@ export default {
 	debug: true, // show debug informormation
 	devtool: 'source-map',
 	noInfo: false,
-	entry: './src/index', // Your appʼs entry point
+	entry: './index', // Your appʼs entry point
   target: 'web',
 	output: {
 		path: `${__dirname}/dist`,
