@@ -9,12 +9,12 @@ export default {
 	debug: true, // show debug informormation
 	devtool: 'source-map',
 	noInfo: false,
-	entry: './src/Indeed.js', // Your appʼs entry point
+	entry: './src/index', // Your appʼs entry point
   target: 'web',
 	output: {
 		path: `${__dirname}/dist`,
 		publicPath: '/',
-		filename: 'bundle.js'
+		filename: 'index.js'
 	},
 	devServer: {
 		contentBase: './dist'

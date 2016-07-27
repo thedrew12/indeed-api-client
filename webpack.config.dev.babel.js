@@ -6,12 +6,12 @@ export default {
 	entry: [
 		'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
 		'webpack/hot/only-dev-server',
-		'./src/Indeed.js' // Your appʼs entry point
+		'./src/index' // Your appʼs entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
-		path: path.join(__dirname, '/dist'),
-		filename: 'bundle.js'
+		path: path.join(__dirname, 'dist'),
+		filename: 'index.js'
 	},
   module: {
     loaders: [
@@ -24,7 +24,7 @@ export default {
 		]
   },
 	devServer: {
-		contentBase: './src',
+		contentBase: './dist',
 			noInfo: true, //  --no-info option
 			hot: true,
 			inline: true
