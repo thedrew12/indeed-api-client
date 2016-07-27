@@ -61,9 +61,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = Indeed;
 	
-	var _JobSearch = __webpack_require__(1);
+	var _jobSearch2 = __webpack_require__(2);
 	
-	var _JobSearch2 = _interopRequireDefault(_JobSearch);
+	var _jobSearch3 = _interopRequireDefault(_jobSearch2);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -76,7 +76,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		} else {
 			return {
 				jobSearch: function jobSearch() {
-					return (0, _JobSearch2.default)(url, publisherId);
+					return (0, _jobSearch3.default)(url, publisherId);
 				}
 			};
 		}
@@ -91,9 +91,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.fetchHandler = fetchHandler;
+	exports.getData = getData;
+	
+	var _isomorphicFetch = __webpack_require__(4);
+	
+	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Cleans up the fetch response and converts it to JSON as
+	 * long as the response code starts with 2
+	 *
+	 * @param {promise} promise The Promise object returned by the fetch call
+	 */
+	function fetchHandler(promise) {
+	  return promise.then(function (response) {
+	    if (response.status.toString().startsWith(2)) {
+	      return response.json();
+	    }
+	    throw new Error('Server returned response code of ' + status);
+	  });
+	}
+	
+	/**
+	 * Gets the data.
+	 *
+	 * @param {string} url The Indeed API url,
+	 * @param {array} params The Indeed API params
+	 */
+	function getData(url) {
+	  return (0, _isomorphicFetch2.default)(url).then(function (response) {
+	    return fetchHandler(response);
+	  });
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	exports.default = jobSearch;
 	
-	var _http = __webpack_require__(2);
+	var _http = __webpack_require__(1);
 	
 	var _queryStrings = __webpack_require__(3);
 	
@@ -208,51 +253,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, handler);
 	
 	  return queryProxy;
-	}
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.fetchHandler = fetchHandler;
-	exports.getData = getData;
-	
-	var _isomorphicFetch = __webpack_require__(4);
-	
-	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/**
-	 * Cleans up the fetch response and converts it to JSON as
-	 * long as the response code starts with 2
-	 *
-	 * @param {promise} promise The Promise object returned by the fetch call
-	 */
-	function fetchHandler(promise) {
-	  return promise.then(function (response) {
-	    if (response.status.toString().startsWith(2)) {
-	      return response.json();
-	    }
-	    throw new Error('Server returned response code of ' + status);
-	  });
-	}
-	
-	/**
-	 * Gets the data.
-	 *
-	 * @param {string} url The Indeed API url,
-	 * @param {array} params The Indeed API params
-	 */
-	function getData(url) {
-	  return (0, _isomorphicFetch2.default)(url).then(function (response) {
-	    return fetchHandler(response);
-	  });
 	}
 
 /***/ },
