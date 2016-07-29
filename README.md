@@ -16,7 +16,7 @@ Indeed('http://api.indeed.com/ads', publisherId)
     .sort('date')
     .radius(25)
     .userIp('1.2.3.4')
-    .userAgent(''Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36'')
+    .userAgent('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36')
     .done()
     .then(response => {
       // do something with the response
