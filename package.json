@@ -1,6 +1,6 @@
 {
   "name": "indeed-api-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A client library for connecting to the Indeed API",
   "main": "./dist/index.js",
   "babel": {
@@ -18,7 +18,8 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rm -rf ./dist",
     "prebuild": "npm-run-all clean-dist",
-    "build": "babel-node tools/build.js"
+    "build": "babel-node tools/build.js",
+    "prepublish": "npm run build"
   },
   "author": "thedrew12",
   "license": "MIT",
