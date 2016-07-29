@@ -6,15 +6,32 @@ export default {
 	devtool: 'cheap-module-eval-source-map',
 	noInfo: false,
 	entry: [
-		'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
-		'./src/index.js' // Your appʼs entry point
+		'./src/index' // Your appʼs entry point
 	],
+  target: 'web',
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: `${__dirname}/dist`,
+    publicPath: '/',
 		filename: 'index.js'
 	},
 	devServer: {
-		contentBase: './src'
+		contentBase: './src',
+    stats: {
+      colors: true,
+      hash: false,
+      version: false,
+      timings: false,
+      assets: false,
+      chunks: false,
+      modules: false,
+      reasons: false,
+      children: false,
+      source: false,
+      errors: true,
+      errorDetails: true,
+      warnings: true,
+      publicPath: false
+    }
 	},
 	plugins: [
 		new webpack.NoErrorsPlugin()
@@ -23,7 +40,6 @@ export default {
     loaders: [
 			{
 				test: /\.js$/,
-				exclude: /(node_modules/,
 				include: path.join(__dirname, './src'),
 				loader: 'babel'
 			}

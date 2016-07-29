@@ -67,6 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	console.log(_jobSearch3.default);
 	function Indeed() {
 		var url = arguments.length <= 0 || arguments[0] === undefined ? 'http://api.indeed.com/ads' : arguments[0];
 		var publisherId = arguments[1];
@@ -264,6 +265,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	// query params
 	exports.default = {
 		publisher: '',
 		v: 2,

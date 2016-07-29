@@ -4,22 +4,27 @@
   "description": "A client library for connecting to the Indeed API",
   "main": "./dist/index.js",
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --profile --colors --hot",
+    "start": "npm-run-all --parallel dev lint:watch",
+    "dev": "webpack-dev-server -d --history-api-fallback --inline --progress --colors --port 4200 --config webpack.config.dev.babel.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "test:watch": "npm run test -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
-    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "remove-dist": "rm -rf ./dist",
     "prebuild": "npm-run-all clean-dist",
-    "build": "babel-node tools/build.js",
-    "prepublish": "npm run build"
+    "build": "babel-node tools/build.js"
   },
   "author": "thedrew12",
   "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "query-string": "^4.2.2",
-    "webpack-dev-server": "^1.14.1"
+    "query-string": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -27,17 +32,17 @@
     "babel-eslint": "^6.0.3",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
     "babel-register": "6.8.0",
     "colors": "^1.1.2",
-    "copy-webpack-plugin": "^3.0.1",
     "eslint": "^2.8.0",
-    "eslint-plugin-react": "^5.0.1",
+    "eslint-watch": "^2.1.14",
+    "expect": "^1.20.2",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
     "npm-run-all": "2.3.0",
-    "rimraf": "2.5.2",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "^1.14.1"
   },
   "repository": {
     "type": "git",

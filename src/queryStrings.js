@@ -1,3 +1,4 @@
+// query params
 export default {
 	publisher: '',
 	v: 2,

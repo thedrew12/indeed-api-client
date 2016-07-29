@@ -74,45 +74,6 @@
         //
         "no-var": 2,
         "generator-star-spacing":  ["error", { "before": false, "after": true}],
-
-        //
-        // React
-        //
-        "jsx-quotes": [2, "prefer-single"],
-        "react/jsx-curly-spacing": [1, "never"],
-        "react/jsx-boolean-value": 1,
-        "react/jsx-no-undef": 2,
-        "react/jsx-no-duplicate-props": 1,
-        "react/jsx-no-literals": 0,
-        "react/jsx-sort-prop-types": 0,
-        "react/jsx-sort-props": 0,
-        "react/jsx-indent-props": [0, 4],
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2,
-        "react/jsx-closing-bracket-location": [1, { "nonEmpty": "tag-aligned", "selfClosing": "after-props"}],
-        "react/no-did-mount-set-state": 2,
-        "react/no-did-update-set-state": 2,
-        "react/no-multi-comp": [1, { "ignoreStateless": true }],
-        "react/no-danger": 1,
-        "react/no-unknown-property": 2,
-        "react/prop-types": [2, { "ignore": ["onClick", "children", "state", "component", "defaultClasses", "className", "sheet", "router"]}],
-        "react/react-in-jsx-scope": 2,
-        "react/self-closing-comp": 2,
-        "react/sort-comp": [2, {
-            "order": [
-                "lifecycle",
-                "/^on.+$/",
-                "rendering",
-                "everything-else"
-            ],
-            "groups": {
-                "rendering": [
-                    "/^render.+$/",
-                    "render"
-                ]
-            }
-        }],
-        "react/wrap-multilines": 2
     },
     "env": {
         "es6": true,
@@ -132,8 +93,5 @@
             "jsx": true,
             "sourceType": "module"
         }
-    },
-    "plugins": [
-        "react"
-    ]
+    }
 }

@@ -7,7 +7,7 @@ logs
 node_modules
 
 # Dist
-
+dist
 
 # Mac files
 .DS_Store
