@@ -96,9 +96,7 @@ export default function jobSearch(url, publisherId) {
         let fullURL = `${url}${endpoint}?${params}`;
 
         return getData(fullURL)
-          .then(response => {
-            return response.data;
-          });
+          .then(response => response);
       } else {
         throw Error('Missing user ip or user agent');
       }
