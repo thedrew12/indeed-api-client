@@ -13,7 +13,7 @@
     "dev": "webpack-dev-server -d --history-api-fallback --inline --progress --colors --port 4200 --config webpack.config.dev.babel.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "test": "./node_modules/.bin/mocha --harmony-proxies --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rm -rf ./dist",

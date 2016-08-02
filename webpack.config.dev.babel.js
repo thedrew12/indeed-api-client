@@ -6,7 +6,7 @@ export default {
 	devtool: 'cheap-module-eval-source-map',
 	noInfo: false,
 	entry: [
-		'./src/index' // Your appʼs entry point
+		'./src/index.js' // Your appʼs entry point
 	],
   target: 'web',
 	output: {
