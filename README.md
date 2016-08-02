@@ -38,6 +38,6 @@ ___
 * **latlong** - If 1, returns latitude and longitude information for each job result. Default is 0.
 * **country** - Search within country specified. Default is US
 * **channel** - Channel name: Group API requests to a specific channel
-* **userIp** - The IP number of the end-user to whom the job results will be displayed. This field is **required**
-* **userAgent** - The User-Agent (browser) of the end-user to whom the job results will be displayed. This can be obtained from the "User-Agent" HTTP request header from the end-user. This field is **required**.
+* **userIp** - The IP number of the end-user to whom the job results will be displayed. **This field is required.** Default is `localhost`.
+* **userAgent** - The User-Agent (browser) of the end-user to whom the job results will be displayed. This can be obtained from the "User-Agent" HTTP request header from the end-user. **This field is required.** Default is `Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36`.
 * **done** - Complete the request with this method and **then** complete the promise from the API
