@@ -24,7 +24,6 @@
   "author": "thedrew12",
   "license": "MIT",
   "dependencies": {
-    "harmony-reflect": "^1.5.1",
     "isomorphic-fetch": "^2.2.1",
     "query-string": "^4.2.2"
   },
