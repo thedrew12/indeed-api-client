@@ -1,6 +1,6 @@
 {
   "name": "indeed-api-client",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A client library for connecting to the Indeed API",
   "main": "./dist/index.js",
   "babel": {
@@ -24,8 +24,8 @@
   "author": "thedrew12",
   "license": "MIT",
   "dependencies": {
+    "harmony-reflect": "^1.5.1",
     "isomorphic-fetch": "^2.2.1",
-    "proxy-polyfill": "^0.1.6",
     "query-string": "^4.2.2"
   },
   "devDependencies": {

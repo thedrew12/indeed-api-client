@@ -6,7 +6,6 @@ export default {
 	devtool: 'cheap-module-eval-source-map',
 	noInfo: false,
 	entry: [
-    'proxy-polyfill',
 		'./src/index.js' // Your appʼs entry point
 	],
   target: 'web',

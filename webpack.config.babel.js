@@ -10,7 +10,6 @@ export default {
 	devtool: 'source-map',
 	noInfo: false,
   entry: [
-    'proxy-polyfill',
     './src/index.js' // Your appʼs entry point
   ],
   target: 'web',
