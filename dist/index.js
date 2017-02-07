@@ -112,7 +112,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		} else {
 			return {
 				jobSearch: function jobSearch() {
-					return (0, _jobSearch3.default)(url, publisherId);
+					return new _jobSearch3.default(url, publisherId);
 				}
 			};
 		}
@@ -150,7 +150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // default query is all job postings
 	  this.query = function (keywords) {
 	    _queryStrings2.default.q = keywords;
-	    return _this;
+	    return this;
 	  };
 	
 	  // default location is Mukilteo, WA
