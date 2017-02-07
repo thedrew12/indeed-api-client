@@ -7,7 +7,7 @@ export default function jobSearch(url, publisherId) {
   queryStrings.publisher = publisherId;
 
   // default query is all job postings
-  this.query = keywords => {
+  this.query = function(keywords) {
     queryStrings.q = keywords;
     return this;
   };
@@ -19,7 +19,7 @@ export default function jobSearch(url, publisherId) {
   };
 
   // default sort is 'relevance'
-  this.sort =  sort => {
+  this.sort = sort => {
     queryStrings.sort = sort;
     return this;
   };

@@ -5,7 +5,7 @@ export default function Indeed(url = 'http://api.indeed.com/ads', publisherId) {
 		throw Error('An Indeed publisher id is required');
 	} else {
 		return {
-			jobSearch: () => jobSearch(url, publisherId)
+			jobSearch: () => new jobSearch(url, publisherId)
 		};
 	}
 }
