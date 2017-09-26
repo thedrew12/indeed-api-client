@@ -1,19 +1,19 @@
 {
   "name": "indeed-api-client",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A client library for connecting to the Indeed API",
   "main": "./dist/index.js",
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
   },
   "scripts": {
     "start": "npm-run-all --parallel dev lint:watch",
-    "dev": "webpack-dev-server -d --history-api-fallback --inline --progress --colors --port 4200 --config webpack.config.dev.babel.js",
+    "dev":
+      "webpack-dev-server -d --history-api-fallback --inline --progress --colors --port 4200 --config webpack.config.dev.babel.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "./node_modules/.bin/mocha --harmony-proxies --compilers js:babel-core/register",
+    "test":
+      "./node_modules/.bin/mocha --harmony-proxies --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rm -rf ./dist",
@@ -24,7 +24,8 @@
   "author": "thedrew12",
   "license": "MIT",
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
+    "es6-promise": "^4.1.1",
+    "fetch-everywhere": "^1.0.5",
     "query-string": "^4.2.2"
   },
   "devDependencies": {

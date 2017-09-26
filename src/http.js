@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'fetch-everywhere';
 
 /**
  * Gets the data.
@@ -7,5 +7,5 @@ import fetch from 'isomorphic-fetch';
  * @param {array} params The Indeed API params
  */
 export function getData(url) {
-	return fetch(url).then(response => response.json());
+  return fetch(url).then(response => response.json());
 }
