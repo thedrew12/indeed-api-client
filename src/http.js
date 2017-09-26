@@ -1,5 +1,4 @@
-import fetch from 'fetch-everywhere';
-
+import axios from 'axios';
 /**
  * Gets the data.
  *
@@ -7,5 +6,5 @@ import fetch from 'fetch-everywhere';
  * @param {array} params The Indeed API params
  */
 export function getData(url) {
-  return fetch(url).then(response => response.json());
+  return axios.get(url).then(response => response.json());
 }
